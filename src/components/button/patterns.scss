@@ -1,0 +1,14 @@
+////
+/// @group button
+////
+
+
+/// An example of a button with a border.
+///
+/// @example markup
+///   <button class="button-with-border"></button>
+
+.button-with-border {
+	@include button();
+	@include button--with-border(red);
+}

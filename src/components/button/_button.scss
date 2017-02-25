@@ -1,0 +1,21 @@
+////
+/// @group button
+////
+
+
+/// Applies button structure.
+///
+/// @param {Number} $size [16px] Sets the size of the button.
+
+@mixin button($size: 16px) {
+	font-size: $size;
+}
+
+
+/// Applies a border to the button.
+///
+/// @param {Color} $color [green] Sets the colour of the border.
+
+@mixin button--with-border($color: green) {
+	border: 1px solid $color;
+}
