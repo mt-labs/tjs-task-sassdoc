@@ -28,7 +28,11 @@
             <section class="main__sub-section" id="{{ group_name }}-{{ type }}">
               <h2 class="main__heading--secondary">
                 <div class="container">
-                  {{ (type + 's') }}
+                  {%- if type === 'placeholder' -%}
+                    {{- 'patterns' -}}
+                  {%- else -%}
+                    {{- (type + 's') -}}
+                  {%- endif -%}
                 </div>
               </h2>
 

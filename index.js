@@ -30,6 +30,8 @@ module.exports = function (gelf, name) {
 			},
 			sassdoc: {
 				dest: null,
+				theme: require('./theme'),
+				autofill: ['content'],
 			},
 		};
 
@@ -55,7 +57,7 @@ module.exports = function (gelf, name) {
 		var worker = sassdoc(config.sassdoc);
 
 		gelf.src(config.docSrc, config.docSrcOpts)
-			.pipe(replace(/^\s*\.([0-9a-z-_]+)/gim, '%$1'))
+			.pipe(replace(/^\.([0-9a-z-_]+)/gim, '%$1'))
 			.pipe(worker)
 		;
 

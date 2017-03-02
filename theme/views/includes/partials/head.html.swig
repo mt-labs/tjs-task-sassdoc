@@ -2,6 +2,8 @@
 
 <title>{{ project_title }}{% if package.version %} - v{{ package.version }}{% endif %}</title>
 <link rel="stylesheet" href="assets/css/main.css" />
+<link rel="stylesheet" href="assets/css/override.css" />
+<link rel="stylesheet" href="assets/css/patterns.css" />
 <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,500,700' rel='stylesheet' type='text/css'>
 <meta name="viewport" content="width=device-width">
 <meta content="IE=edge, chrome=1" http-equiv="X-UA-Compatible">

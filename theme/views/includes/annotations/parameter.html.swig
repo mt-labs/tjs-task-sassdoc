@@ -1,7 +1,5 @@
-<h3 class="item__sub-heading">Parameters</h3>
-
 {% if item.parameter.length > 0 %}
-
+  <h3 class="item__sub-heading">Parameters</h3>
   <table class="item__parameters">
     <thead>
       <tr>
@@ -40,9 +38,4 @@
       {% endfor %}
     </tbody>
   </table>
-
-{% else %}
-
-  <p>None.</p>
-
 {% endif %}

@@ -4,14 +4,22 @@
 
 {% include '../annotations/deprecated.html.swig' %}
 
+{% include '../annotations/description.html.swig' %}
+
 {% include '../annotations/preview.html.swig' %}
 
-{% if not item.alias %}
+{% if not item.alias and item.context.type !== 'placeholder' %}
 
   {% for annotation in display.annotations[item.context.type] %}
+    {% if annotation !== 'description' %}
     {% set path = '../annotations/' + annotation + '.html.swig' %}
     {% include path %}
+    {% endif %}
   {% endfor %}
+
+{% elseif item.context.type === 'placeholder' %}
+
+  {% include '../annotations/pattern.html.swig' %}
 
 {% else %}
 
