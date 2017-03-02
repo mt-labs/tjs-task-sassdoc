@@ -14,13 +14,13 @@ gelf.task('default', ['dump:tasks']);
  */
 gelf.load(require('./index'), function(config) {
 
-	config.docSrc = 'src/**/*.scss';
+	config.docSrc = 'test/src/**/*.scss';
 
 	config.patternSrc = [
-		'src/patterns.scss',
-		'src/**/patterns.scss',
+		'test/src/patterns.scss',
+		'test/src/**/patterns.scss',
 	];
 
-	config.dest = 'dist/sassdoc';
+	config.dest = 'test/compiled';
 
 });

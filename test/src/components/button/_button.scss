@@ -6,6 +6,8 @@
 /// Applies button structure.
 ///
 /// @param {Number} $size [16px] Sets the size of the button.
+///
+/// @deprecated
 
 @mixin button($size: 16px) {
 	font-size: $size;
@@ -18,4 +20,11 @@
 
 @mixin button--with-border($color: green) {
 	border: 1px solid $color;
+}
+
+
+/// Applies custom content to an otherwise normal button.
+
+@mixin button--with-content() {
+	@content;
 }

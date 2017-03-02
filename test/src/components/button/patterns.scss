@@ -9,6 +9,6 @@
 ///   <button class="button-with-border"></button>
 
 .button-with-border {
-	@include button();
-	@include button--with-border(red);
+  @include button();
+  @include button--with-border(red);
 }

@@ -17,8 +17,8 @@ $RECYCLE.BIN/
 # Node modules directory
 node_modules
 
-# Distribution directory
-/dist
+# Compiled output
+/test/compiled
 
 # Special git files
 !.gitattributes
