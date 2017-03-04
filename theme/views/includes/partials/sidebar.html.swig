@@ -1,9 +1,13 @@
 <div class="sidebar__header">
   <h1 class="sidebar__title">
     {% if package.homepage %}
-      <a href="{{ package.homepage }}">{{ project_title }}{% if package.version %} - v{{ package.version }}{% endif %}</a>
+      <a href="{{ package.homepage }}">
+        {{- project_title -}}
+        {%- if package.version %}<span class="sidebar__version">{{ package.version }}</span>{% endif -%}
+      </a>
     {% else %}
-      {{ project_title }}{% if package.version %} - {{ package.version }}{% endif %}
+      {{- project_title -}}
+      {%- if package.version %}<span class="sidebar__version">{{ package.version }}</span>{% endif -%}
     {% endif %}
   </h1>
 </div>
@@ -15,7 +19,9 @@
 
   {# Some items documented #}
   {% else %}
+    {#
     <button type="button" class="btn-toggle  js-btn-toggle" data-alt="Open all">Close all</button>
+    #}
 
     {# Loop over the groups #}
     {% for group_name, group in data.byGroupAndType %}

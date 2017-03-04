@@ -1,3 +1,4 @@
+{#
 <header class="header" role="banner">
   <div class="container">
     <div class="sassdoc__searchbar  searchbar">
@@ -9,3 +10,4 @@
      </div>
   </div>
 </header>
+#}

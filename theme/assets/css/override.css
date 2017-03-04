@@ -1,3 +1,174 @@
+/* Remove unwanted transitions */
+/* ------------------------------------------------------ */
+
+a,
+:root .sidebar,
+:root .main {
+	transition-duration: 0s;
+}
+
+
+/* Remove header/search bar */
+/* ------------------------------------------------------ */
+
+.main {
+	padding-top: 0; /* Reclaim reserved space */
+}
+
+
+/* Use a better monospace font */
+/* ------------------------------------------------------ */
+
+code {
+	font-family: Consolas, Monaco, "Andale Mono", monospace;
+}
+
+
+/* Reinstate styles lost by global reset */
+/* ------------------------------------------------------ */
+
+.item__sub-heading,
+.item__parameters th {
+	font-weight: 600;
+}
+
+.main__item > p {
+	margin: 1em 0;
+}
+
+
+/* Restyle section containers */
+/* ------------------------------------------------------ */
+
+.main__section {
+	border-top: 0 none;
+	margin-top: 0;
+}
+
+
+/* Restyle primary headings */
+/* ----------------------------------------------------- */
+
+.main__heading {
+	background: #dd5a6f;
+	border: 0 none;
+	color: #fff;
+	padding-bottom: 0.5em;
+	padding-top: 0.5em;
+}
+
+
+/* Restyle secondary headings */
+/* ------------------------------------------------------ */
+
+.main__heading--secondary {
+	padding-bottom: 0 !important; /* Remove excess padding on mobile view */
+}
+
+.main__heading--secondary::before {
+	height: 0.15em; /* Reduce size of horizontal rule */
+}
+
+
+/* Restyle sidebar */
+/* ------------------------------------------------------ */
+
+.sidebar {
+	background: #5c4863;
+	background-size: 1px 1px;
+	border-right: 0 none;
+	margin-top: 0 !important;
+}
+
+@media all and (max-width: 800px) {
+	.sidebar {
+		overflow: hidden; /* Contain margins */
+	}
+}
+
+.sidebar__header {
+	background: rgba(0, 0, 0, 0.2);
+	border-bottom: 0 none;
+	color: #fff;
+	font-size: 3.5em;
+	padding: 0.5em 0.4em;
+	text-transform: lowercase;
+}
+
+.sidebar__title {
+	display: inline-block;
+	font-size: 0.5em;
+	margin-top: 0.2em;
+	padding: 0;
+	vertical-align: top;
+	width: 100%;
+}
+
+.sidebar__version {
+	display: block;
+	font-size: 0.6em;
+	margin-left: 2px;
+	margin-top: 0.2em;
+	opacity: 0.6;
+}
+
+.sidebar__item {
+	background: transparent !important;
+}
+
+.sidebar__item--heading {
+	background:  !important;
+	padding: 0;
+}
+
+.sidebar__item--sub-heading {
+	padding: 0;
+}
+
+.sidebar__item a {
+	background: rgba(255, 255, 255, 0);
+	color: #fff !important;
+	display: block;
+	padding: 0.4em 1em;
+	padding-left: 4.5em;
+}
+
+.sidebar__item,
+.sidebar__item a {
+	transition-property: background-color, color;
+	transition-duration: 100ms;
+	transition-timing-function: ease-out;
+}
+
+.sidebar__item a:active,
+.sidebar__item a:focus,
+.sidebar__item a:hover {
+	background-color: rgba(255, 255, 255, 0.15);
+}
+
+.sidebar__item--heading a {
+	background-clip: padding-box;
+	background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.1));
+	background-repeat: repeat;
+	background-size: 1px 1px;
+	border-bottom: 0.4em solid transparent;
+	padding-bottom: 0.8em;
+	padding-left: 1.5em;
+	padding-top: 0.8em;
+}
+
+.sidebar__item--sub-heading a {
+	color: rgba(255, 255, 255, 0.6) !important;
+	padding-left: 3em;
+	text-transform: uppercase;
+}
+
+.sidebar__item--heading::after,
+.sidebar__item--sub-heading::after {
+	content: none;
+}
+
+
 /* Reset float on item headings */
 /* ------------------------------------------------------ */
 
@@ -8,11 +179,11 @@
 }
 
 
-/* Increase margin between sections */
+/* Increase margin between sub-sections */
 /* ------------------------------------------------------ */
 
 .main__sub-section + .main__sub-section {
-	margin-top: 3rem;
+	margin-top: 4rem;
 }
 
 
@@ -24,36 +195,34 @@
 }
 
 
-/* Container for rendered pattern previews */
+/* Display pattern code in a 2-column grid */
 /* ------------------------------------------------------ */
 
 .item__pattern-preview {
 	margin-bottom: 1.5rem;
 }
 
+@media all and (min-width: 1337px) {
+	.pattern-grid {
+		align-items: stretch;
+		display: flex;
+		justify-content: space-between;
+	}
 
-/* Organise pattern code into a two-column grid */
-/* ------------------------------------------------------ */
+	.pattern-grid__group {
+		align-items: stretch;
+		display: flex;
+		flex-direction: column;
+		flex: 0 0 auto;
+		justify-content: flex-start;
+		width: calc(50% - 0.75rem);
+	}
 
-.pattern-grid {
-	align-items: stretch;
-	display: flex;
-	justify-content: space-between;
-}
-
-.pattern-grid__group {
-	align-items: stretch;
-	display: flex;
-	flex-direction: column;
-	flex: 0 0 auto;
-	justify-content: flex-start;
-	width: calc(50% - 0.75rem);
-}
-
-.pattern-grid__item {
-	background: white;
-	flex: 1 0 auto;
-	width: 100%;
+	.pattern-grid__item {
+		background: white;
+		flex: 1 0 auto;
+		width: 100%;
+	}
 }
 
 
