@@ -1,0 +1,81 @@
+////
+/// @group util.color
+////
+
+/// Converts a colour to grayscale using a more accurate algorithm than the built-in `grayscale` function.
+///
+/// @param {Color} $color The colour to convert.
+
+@function real-grayscale($color) {
+
+	$k: round(
+		0.2126 * red($color) +
+		0.7152 * green($color) +
+		0.0722 * blue($color)
+	);
+
+	@return rgba($k, $k, $k, alpha($color));
+}
+
+
+/// Gets the percieved brightness of a colour.
+///
+/// @param {Color} $color The colour to test.
+
+@function brightness($color) {
+
+	$brightness: red(real-grayscale($color)) / 255;
+	@return $brightness * 100%;
+}
+
+
+/// Gets the most-contrasting from a list of colours, compared against a given base colour.
+///
+/// @param {Color} $color The base colour to compare against.
+/// @param {Color} $color The list of colours to test.
+///
+/// @todo Experiment with gamma-correction.
+
+@function contrasting-color($color, $colors...) {
+
+	@if length($colors) == 0 {
+		$colors: #fff, #000;
+	}
+
+	$brightness: brightness($color);
+
+	$bestColor: null;
+	$bestDiff: null;
+
+	@each $color in $colors {
+
+		$diff: abs($brightness - brightness($color));
+
+		@if $bestDiff == null or $diff > $bestDiff {
+			$bestColor: $color;
+			$bestDiff: $diff;
+		}
+	}
+
+	@return $bestColor;
+}
+
+
+/// Gets the lightest from a list of colours.
+///
+/// @param {Arglist} $colors The list of colours to test.
+
+@function lightest-color($colors...) {
+
+	@return contrasting-color(#000, $colors...);
+}
+
+
+/// Gets the lightest from a list of colours.
+///
+/// @param {Arglist} $colors The list of colours to test.
+
+@function darkest-color($colors...) {
+
+	@return contrasting-color(#fff, $colors...);
+}

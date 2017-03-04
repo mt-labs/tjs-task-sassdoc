@@ -1,0 +1,155 @@
+// Viewport declaration.
+// ---------------------------------------------------------
+
+@-ms-viewport {
+	width: device-width;
+}
+
+@viewport {
+	width: device-width;
+}
+
+
+// Global typography.
+// ---------------------------------------------------------
+
+body {
+	color: $text-color;
+	font-family: $font-family;
+	font-size: $font-size;
+	font-weight: $font-weight;
+	line-height: $line-height;
+}
+
+
+// Global `border-box` sizing.
+// ---------------------------------------------------------
+
+*, *::before, *::after {
+	box-sizing: border-box;
+}
+
+
+// Destyle deprecated elements.
+// ---------------------------------------------------------
+
+b, i, u, s, center, big, small {
+	display: inline;
+	font-style: inherit;
+	font-weight: inherit;
+	text-align: inherit;
+	text-decoration: inherit;
+}
+
+
+// Text-selection style.
+// ---------------------------------------------------------
+
+::selection {
+	background: $selection-color;
+	color: $selection-text-color;
+	text-shadow: none;
+}
+
+
+// Reset anchor styles.
+// ---------------------------------------------------------
+
+a {
+	color: $link-color;
+	cursor: pointer;
+	text-decoration: inherit;
+
+	&:focus {
+		outline: 0 none;
+		text-decoration: underline;
+	}
+
+	&:active,
+	&:hover {
+		color: $link-color--active;
+	}
+}
+
+
+// ...
+// ---------------------------------------------------------
+
+a,
+button,
+input,
+select,
+textarea {
+	transition-property:
+		background-color,
+		border-color,
+		box-shadow,
+		color
+	;
+	transition-duration: $interact-duration;
+	transition-timing-function: $interact-timing-function;
+}
+
+
+// Reset heading styles.
+// ---------------------------------------------------------
+
+h1, h2, h3, h4, h5, h6, p {
+	font-size: inherit;
+	font-weight: inherit;
+	margin: 0;
+}
+
+
+// Reset list styling.
+// ---------------------------------------------------------
+
+ul,
+ol,
+li {
+	display: block;
+}
+
+ul,
+ol {
+	margin: 0;
+	padding: 0;
+}
+
+
+// Reset <address> styles.
+// ---------------------------------------------------------
+
+address {
+	display: block;
+	font-style: inherit;
+}
+
+
+// Remove baseline gap from inline-block elements.
+// ---------------------------------------------------------
+
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+	vertical-align: top;
+}
+
+
+// Allow only vertical resizing of textareas.
+// ---------------------------------------------------------
+
+textarea {
+	resize: vertical;
+}
+
+
+// Touch interaction.
+// ---------------------------------------------------------
+
+a, label, button {
+	touch-action: manipulation;
+}

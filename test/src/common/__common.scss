@@ -1,14 +1,8 @@
-////
-/// @group common
-////
+// Utility
+@import 'util/_util';
 
-
-/// Causes overflowing text to be replaced with an ellipsis.
-///
-/// @param {String} $ellipsis [ellipsis] The value for the `text-overflow` property.
-
-@mixin text-overflow($ellipsis: ellipsis) {
-	overflow: hidden;
-	text-overflow: $ellipsis;
-	white-space: nowrap;
-}
+// Configuration
+@import 'colors';
+@import 'sizes';
+@import 'typography';
+@import 'interaction';

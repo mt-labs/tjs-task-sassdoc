@@ -1,0 +1,15 @@
+// Interaction effects.
+// ---------------------------------------------------------
+
+$interact-duration: 150ms;
+$interact-timing-function: ease-out;
+
+$link-color: $accent-color;
+$link-color--active: $text-color--strong;
+
+$selection-color: $accent-color;
+$selection-text-color: contrasting-color($selection-color, $black, $white);
+
+$focus-color: $accent-color;
+$focus-box-shadow: $focus-color 0 0 5px;
+$focus-box-shadow-transition: box-shadow $interact-duration $interact-timing-function

@@ -1,0 +1,35 @@
+// Typography settings.
+// ---------------------------------------------------------
+
+$font-family: -apple-system, BlinkMacSystemFont,
+    "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell",
+    "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+
+
+$font-size--s: 14px;
+$font-size--m: 16px;
+$font-size--l: 18px;
+
+$font-size: $font-size--m;
+
+
+$font-weight--light: 200;
+$font-weight--normal: 400;
+$font-weight--bold: 700;
+
+$font-weight: $font-weight--light;
+
+
+$line-height--s: (19px / 16px) + 0.0001;
+$line-height--m: (22px / 16px) + 0.0001;
+$line-height--l: (24px / 16px) + 0.0001;
+
+$line-height: $line-height--m;
+
+
+$text-color--weak: $shuttle-gray;
+$text-color--normal: $gable-gray;
+$text-color--strong: $black;
+
+$text-color: $text-color--normal;
